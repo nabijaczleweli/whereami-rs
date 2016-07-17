@@ -9,5 +9,7 @@
 !*.sublime-project
 !src
 !src/**
+!ext
+!ext/**
 !example
 !example/**

@@ -1,0 +1,3 @@
+[submodule "ext/whereami"]
+	path = ext/whereami
+	url = https://github.com/gpakosz/whereami.git
