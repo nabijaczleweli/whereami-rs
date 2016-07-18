@@ -13,16 +13,16 @@ extern "C" {
                          -> libc::c_int;
 }
 
-pub fn getExecutablePath(out: *mut u8,
-                         capacity: libc::c_int,
-                         dirname_length: *mut libc::c_int)
-                         -> libc::c_int {
+pub fn get_executable_path(out: *mut u8,
+                           capacity: libc::c_int,
+                           dirname_length: *mut libc::c_int)
+                           -> libc::c_int {
     unsafe { wai_getExecutablePath(out, capacity, dirname_length) }
 }
 
-pub fn getModulePath(out: *mut u8,
-                     capacity: libc::c_int,
-                     dirname_length: *mut libc::c_int)
-                     -> libc::c_int {
+pub fn get_module_path(out: *mut u8,
+                       capacity: libc::c_int,
+                       dirname_length: *mut libc::c_int)
+                       -> libc::c_int {
     unsafe { wai_getModulePath(out, capacity, dirname_length) }
 }

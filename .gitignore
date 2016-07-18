@@ -6,6 +6,7 @@
 !LICENSE
 !README.md
 !Cargo.toml
+!build.rs
 !*.sublime-project
 !src
 !src/**

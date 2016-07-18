@@ -7,9 +7,9 @@ use std::path::PathBuf;
 
 
 pub fn executable_path() -> PathBuf {
-    implementation::get_path(native::getExecutablePath )
+    implementation::get_path(native::get_executable_path)
 }
 
 pub fn module_path() -> PathBuf {
-    implementation::get_path(native::getModulePath )
+    implementation::get_path(native::get_module_path)
 }
