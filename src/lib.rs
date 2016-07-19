@@ -6,10 +6,10 @@ mod implementation;
 use std::path::PathBuf;
 
 
-pub fn executable_path() -> PathBuf {
-    implementation::get_path(native::get_executable_path)
+pub fn executable_path() -> Option<PathBuf> {
+    implementation::get_path(native::wai_getExecutablePath)
 }
 
-pub fn module_path() -> PathBuf {
-    implementation::get_path(native::get_module_path)
+pub fn module_path() -> Option<PathBuf> {
+    implementation::get_path(native::wai_getModulePath)
 }
