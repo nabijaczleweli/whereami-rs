@@ -66,12 +66,12 @@
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>path</span>::<span class='ident'>PathBuf</span>;
 
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>executable_path</span>() <span class='op'>-&gt;</span> <span class='ident'>PathBuf</span> {
-    <span class='ident'>implementation</span>::<span class='ident'>get_path</span>(<span class='ident'>native</span>::<span class='ident'>get_executable_path</span>)
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>executable_path</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span> {
+    <span class='ident'>implementation</span>::<span class='ident'>get_path</span>(<span class='ident'>native</span>::<span class='ident'>wai_getExecutablePath</span>)
 }
 
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>module_path</span>() <span class='op'>-&gt;</span> <span class='ident'>PathBuf</span> {
-    <span class='ident'>implementation</span>::<span class='ident'>get_path</span>(<span class='ident'>native</span>::<span class='ident'>get_module_path</span>)
+<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>module_path</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span> {
+    <span class='ident'>implementation</span>::<span class='ident'>get_path</span>(<span class='ident'>native</span>::<span class='ident'>wai_getModulePath</span>)
 }
 </pre>
 </section>

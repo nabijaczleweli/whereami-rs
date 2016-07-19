@@ -56,48 +56,20 @@
 <span id="12">12</span>
 <span id="13">13</span>
 <span id="14">14</span>
-<span id="15">15</span>
-<span id="16">16</span>
-<span id="17">17</span>
-<span id="18">18</span>
-<span id="19">19</span>
-<span id="20">20</span>
-<span id="21">21</span>
-<span id="22">22</span>
-<span id="23">23</span>
-<span id="24">24</span>
-<span id="25">25</span>
-<span id="26">26</span>
-<span id="27">27</span>
-<span id="28">28</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>libc</span>;
 
 
 <span class='attribute'>#[<span class='ident'>link</span>(<span class='ident'>name</span> <span class='op'>=</span> <span class='string'>&quot;whereami&quot;</span>)]</span>
 <span class='kw'>extern</span> <span class='string'>&quot;C&quot;</span> {
-    <span class='kw'>fn</span> <span class='ident'>wai_getExecutablePath</span>(<span class='ident'>out</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>u8</span>,
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>wai_getExecutablePath</span>(<span class='ident'>out</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>u8</span>,
+                                 <span class='ident'>capacity</span>: <span class='ident'>libc</span>::<span class='ident'>c_int</span>,
+                                 <span class='ident'>dirname_length</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>)
+                                 <span class='op'>-&gt;</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>;
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>wai_getModulePath</span>(<span class='ident'>out</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>u8</span>,
                              <span class='ident'>capacity</span>: <span class='ident'>libc</span>::<span class='ident'>c_int</span>,
                              <span class='ident'>dirname_length</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>)
                              <span class='op'>-&gt;</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>;
-    <span class='kw'>fn</span> <span class='ident'>wai_getModulePath</span>(<span class='ident'>out</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>u8</span>,
-                         <span class='ident'>capacity</span>: <span class='ident'>libc</span>::<span class='ident'>c_int</span>,
-                         <span class='ident'>dirname_length</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>)
-                         <span class='op'>-&gt;</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>;
-}
-
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_executable_path</span>(<span class='ident'>out</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>u8</span>,
-                           <span class='ident'>capacity</span>: <span class='ident'>libc</span>::<span class='ident'>c_int</span>,
-                           <span class='ident'>dirname_length</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>)
-                           <span class='op'>-&gt;</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span> {
-    <span class='kw'>unsafe</span> { <span class='ident'>wai_getExecutablePath</span>(<span class='ident'>out</span>, <span class='ident'>capacity</span>, <span class='ident'>dirname_length</span>) }
-}
-
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_module_path</span>(<span class='ident'>out</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>u8</span>,
-                       <span class='ident'>capacity</span>: <span class='ident'>libc</span>::<span class='ident'>c_int</span>,
-                       <span class='ident'>dirname_length</span>: <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>)
-                       <span class='op'>-&gt;</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span> {
-    <span class='kw'>unsafe</span> { <span class='ident'>wai_getModulePath</span>(<span class='ident'>out</span>, <span class='ident'>capacity</span>, <span class='ident'>dirname_length</span>) }
 }
 </pre>
 </section>
