@@ -12,5 +12,5 @@
 !src/**
 !ext
 !ext/**
-!example
-!example/**
+!examples
+!examples/**

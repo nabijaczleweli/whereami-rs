@@ -28,6 +28,7 @@ build_script:
 test: off
 test_script:
   - cargo test --verbose
+  - "pushd target\\debug\\examples && for %%i in (*) do (echo %%i: && %%i) && popd"
 
 notifications:
   - provider: Email

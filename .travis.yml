@@ -9,6 +9,7 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_df07e5ec4394_key -iv $encrypted_df07e5ec4394_iv -in gh_rsa.enc -out gh_rsa -d
 
 after_success:
+  - "pushd target/debug/examples && for ex in $(ls); do echo \"$ex:\"; ./$ex; done && popd"
   - if [ -n "$TRAVIS_PULL_REQUEST" ] && [ "$TRAVIS_RUST_VERSION" == "stable" ]; then
       echo "Update docs for commits $TRAVIS_COMMIT_RANGE" > $TRAVIS_BUILD_DIR/../DOC_UPDATE_MSG;
       echo >> $TRAVIS_BUILD_DIR/../DOC_UPDATE_MSG;
