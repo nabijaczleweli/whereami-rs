@@ -27,7 +27,7 @@
 		{
 			"follow_symlinks": true,
 			"name": "Examples",
-			"path": "example"
+			"path": "examples"
 		},
 	],
 	"settings":
