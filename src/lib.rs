@@ -9,6 +9,7 @@
 //! println!("This exec/DLL is at {}", whereami::module_path().unwrap().to_str().unwrap());
 //! ```
 
+
 extern crate libc;
 
 mod native;
@@ -32,7 +33,7 @@ pub fn executable_path() -> Option<PathBuf> {
 /// Returns the path of the current module or `None` if acquiring thereof failed.
 ///
 /// Note: this is not the Rust `mod`, but rather an OS module
-///       (most of the time: DLL)
+///       (most of the time: a DLL)
 ///
 /// # Examples:
 ///
