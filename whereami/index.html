@@ -47,21 +47,29 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-0' class='srclink' href='../src/whereami/src/lib.rs.html#1-15' title='goto source code'>[src]</a></span></h1>
-<h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+               </span><a id='src-0' class='srclink' href='../src/whereami/src/lib.rs.html#1-45' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p><a href="https://github.com/gpakosz/whereami"><code>whereami</code></a> for Rust.</p>
+
+<p>Used for checking where the current executable/DLL.</p>
+
+<h1 id='examples' class='section-header'><a href='#examples'>Examples:</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;This executable is at {}&quot;</span>, <span class='ident'>whereami</span>::<span class='ident'>executable_path</span>().<span class='ident'>unwrap</span>().<span class='ident'>to_str</span>().<span class='ident'>unwrap</span>());
+<span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;This exec/DLL is at {}&quot;</span>, <span class='ident'>whereami</span>::<span class='ident'>module_path</span>().<span class='ident'>unwrap</span>().<span class='ident'>to_str</span>().<span class='ident'>unwrap</span>());</pre>
+</div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class='fn' href='fn.executable_path.html'
                                   title='whereami::executable_path'>executable_path</a></td>
                            <td class='docblock short'>
-                                
+                                <p>Returns the path of the current executable or <code>None</code> if acquiring thereof failed.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class='fn' href='fn.module_path.html'
                                   title='whereami::module_path'>module_path</a></td>
                            <td class='docblock short'>
-                                
+                                <p>Returns the path of the current module or <code>None</code> if acquiring thereof failed.</p>
                            </td>
                        </tr></table></section>
     <section id='search' class="content hidden"></section>

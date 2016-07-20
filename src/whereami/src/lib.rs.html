@@ -57,7 +57,48 @@
 <span id="13">13</span>
 <span id="14">14</span>
 <span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
 </pre><pre class='rust '>
+<span class='doccomment'>//! [`whereami`](https://github.com/gpakosz/whereami) for Rust.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! Used for checking where the current executable/DLL.</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! # Examples:</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! ```</span>
+<span class='doccomment'>//! println!(&quot;This executable is at {}&quot;, whereami::executable_path().unwrap().to_str().unwrap());</span>
+<span class='doccomment'>//! println!(&quot;This exec/DLL is at {}&quot;, whereami::module_path().unwrap().to_str().unwrap());</span>
+<span class='doccomment'>//! ```</span>
+
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>libc</span>;
 
 <span class='kw'>mod</span> <span class='ident'>native</span>;
@@ -66,10 +107,29 @@
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>path</span>::<span class='ident'>PathBuf</span>;
 
 
+<span class='doccomment'>/// Returns the path of the current executable or `None` if acquiring thereof failed.</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// # Examples:</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// ```</span>
+<span class='doccomment'>/// # use whereami::executable_path;</span>
+<span class='doccomment'>/// println!(&quot;This executable is at {}&quot;, executable_path().unwrap().to_str().unwrap());</span>
+<span class='doccomment'>/// ```</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>executable_path</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span> {
     <span class='ident'>implementation</span>::<span class='ident'>get_path</span>(<span class='ident'>native</span>::<span class='ident'>wai_getExecutablePath</span>)
 }
 
+<span class='doccomment'>/// Returns the path of the current module or `None` if acquiring thereof failed.</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// Note: this is not the Rust `mod`, but rather an OS module</span>
+<span class='doccomment'>///       (most of the time: DLL)</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// # Examples:</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// ```</span>
+<span class='doccomment'>/// # use whereami::module_path;</span>
+<span class='doccomment'>/// println!(&quot;This exec/DLL is at {}&quot;, module_path().unwrap().to_str().unwrap());</span>
+<span class='doccomment'>/// ```</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>module_path</span>() <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span> {
     <span class='ident'>implementation</span>::<span class='ident'>get_path</span>(<span class='ident'>native</span>::<span class='ident'>wai_getModulePath</span>)
 }
