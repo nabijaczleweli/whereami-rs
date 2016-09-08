@@ -7,7 +7,7 @@ readme = "README.md"
 keywords = ["whereami", "where", "location", "filesystem"]
 license = "MIT"
 # Remember to also update in appveyor.yml
-version = "1.0.0"
+version = "1.1.0"
 authors = ["nabijaczleweli <nabijaczleweli@gmail.com>"]
 exclude = ["*.enc"]
 build = "build.rs"
