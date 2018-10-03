@@ -5,4 +5,4 @@
 Native [`whereami`](https://github.com/gpakosz/whereami) is built automatically.
 
 # Docs
-Autoupdated docs can be found [here](https://cdn.rawgit.com/nabijaczleweli/whereami-rs/doc/whereami/index.html).
+Autoupdated docs can be found [here](https://rawcdn.githack.com/nabijaczleweli/whereami-rs/doc/whereami/index.html).
